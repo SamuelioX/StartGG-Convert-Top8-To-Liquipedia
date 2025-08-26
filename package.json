@@ -8,6 +8,7 @@
 		"@testing-library/react": "^16.3.0",
 		"@testing-library/user-event": "^13.5.0",
 		"bootstrap": "^5.3.7",
+		"express": "^5.1.0",
 		"lodash": "^4.17.21",
 		"react": "^19.1.1",
 		"react-bootstrap": "^2.10.10",
@@ -19,7 +20,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start": "node server/server.js",
 		"build": "react-scripts build",
 		"test": "jest",
 		"eject": "react-scripts eject"

@@ -4,6 +4,15 @@ const JsonToLiquipedia = ({ jsonInput }) => {
 	const [output, setOutput] = useState("");
 	const [copied, setCopied] = useState(false);
 	const outputRef = useRef(null);
+	const cleanPlayerName = (name) => {
+		// Remove team tags often separated by "|", "-", or "–"
+		// Keep only the last part, which is usually the actual gamertag
+		if (!name) return name;
+		return name
+			.split(/[\|\-–]/)
+			.pop()
+			.trim();
+	};
 
 	const convertToLiquipediaFormat = (json) => {
 		try {
@@ -16,7 +25,7 @@ const JsonToLiquipedia = ({ jsonInput }) => {
 			const grouped = {};
 			top8.forEach(({ placement, entrant }) => {
 				if (!grouped[placement]) grouped[placement] = [];
-				grouped[placement].push(entrant.name);
+				grouped[placement].push(cleanPlayerName(entrant.name));
 			});
 
 			const placements = Object.keys(grouped)

@@ -1,5 +1,5 @@
 import React from "react";
 
-const PlacementContext = React.createContext();
+const PlacementsContext = React.createContext();
 
-export default PlacementContext;
+export default PlacementsContext;

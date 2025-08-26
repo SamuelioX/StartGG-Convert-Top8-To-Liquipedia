@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import JsonInput from "../components/ConvertJson";
+import FetchInput from "../components/FetchJson";
 const AppRouter = () => {
 	return (
 		<BrowserRouter>
@@ -10,6 +11,7 @@ const AppRouter = () => {
 				<div className="main-content">
 					<Routes>
 						<Route path="/convert" element={<JsonInput />} />
+						<Route path="/fetch" element={<FetchInput />} />
 						<Route path="*" element={<Navigate to="/" replace />} />
 					</Routes>
 				</div>
